@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
     container.classList.add("container");
 
     // Create a flex container to center the text horizontally
+    // Referenced https://getbootstrap.com/docs/4.2/utilities/flex/
     let flexContainer = document.createElement("div");
     flexContainer.classList.add("d-flex", "justify-content-center", "w-100");
 
