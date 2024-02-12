@@ -15,9 +15,10 @@ body {
 
 .h2{
     font-size: 23px;
-    font-style:oblique;
+    font-style:bold;
     font-family: 'Monaco', monospace;
-    color: #363434;
+    color:#898285 ;
+    font-weight: bold;
 }
 
 .container {
@@ -68,6 +69,11 @@ body {
 
 .navbar-nav .nav-link:hover {
     color: #FFB6C1;
+}
+
+.navbar-nav .nav-item:nth-child(1) .nav-link {
+
+    color: #F08080;
 }
 
 /* Footer Navbar Styles */
