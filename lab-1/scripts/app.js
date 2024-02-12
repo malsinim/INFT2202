@@ -111,3 +111,70 @@ document.addEventListener("DOMContentLoaded", function() {
         aboutUsLink.parentNode.insertBefore(newNavItem, aboutUsLink.nextSibling);
     }
 });
+
+// Add a navbar to the bottom of the page, which has the copy right text
+document.addEventListener("DOMContentLoaded", function() {
+    // Create the bottom navbar
+    let navbarBottom = document.createElement("nav");
+    navbarBottom.classList.add("navbar", "fixed-bottom", "bg-light", "navbar-expand-sm");
+
+    // Create a container
+    let container = document.createElement("div");
+    container.classList.add("container");
+
+    // Create a flex container to center the text horizontally
+    let flexContainer = document.createElement("div");
+    flexContainer.classList.add("d-flex", "justify-content-center", "w-100");
+
+
+    // Create the copyright statement
+    let copyrightText = document.createElement("span");
+    copyrightText.classList.add("navbar-text", "text-darkgrey");
+    let currentYear = new Date().getFullYear();
+    copyrightText.textContent ="Copyright " + currentYear + ", Malsini Masachchige";
+    copyrightText.style.fontSize = "16px";
+
+    // Append elements
+    flexContainer.appendChild(copyrightText);
+    container.appendChild(flexContainer);
+    navbarBottom.appendChild(container);
+    
+
+    // Append the navbar to the body
+    document.body.appendChild(navbarBottom);
+   
+});
+
+
+// Contact form DOM 
+document.addEventListener("DOMContentLoaded", function() {
+    const contactForm = document.getElementById("contactForm");
+
+    // Event listener for form submission
+    contactForm.addEventListener("submit", function(event) {
+        // Prevent form submission 
+        // Referenced https://bito.ai/resources/javascript-prevent-form-submit-javascript-explained/
+        event.preventDefault(); 
+
+        // Referenced https://developer.mozilla.org/en-US/docs/Web/API/FormData/get
+        // Retrieve form data
+        const formData = new FormData(contactForm);
+        const name = formData.get("name");
+        const contactNumber = formData.get("contactNumber");
+        const email = formData.get("email");
+        const message = formData.get("message");
+
+        // Referenced https://www.shecodes.io/athena/16067-how-to-use-console-log-in-javascript#:~:text=You%20can%20use%20console.,of%20variables%20in%20your%20code.
+        // Output user information to the console
+        console.log("Name:", name);
+        console.log("Contact Number:", contactNumber);
+        console.log("Email Address:", email);
+        console.log("Short Message:", message);
+
+        // Start a timer to redirect the user after 3 seconds
+        // Referenced https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
+        setTimeout(function() {
+            window.location.href = "index.html"; 
+        }, 3000);
+    });
+});

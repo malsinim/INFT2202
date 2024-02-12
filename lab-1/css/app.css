@@ -99,9 +99,7 @@ body {
 
 
 /* Contact Form Styles */
-.form-group {
-    margin-bottom: 20px;
-}
+
 
 .form-group label {
     display: block;
@@ -111,24 +109,24 @@ body {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group textarea {
-    width: 100%;
-    padding: 10px;
+    width:45%;
+    padding: 5px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
 .form-group textarea {
-    height: 150px;
+    height: 100px;
 }
 
 .form-group input[type="submit"] {
-    background-color: #333;
-    color: #fff;
+    background-color: #f5d8eb;
+    color: #f5d8eb;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
 
 .form-group input[type="submit"]:hover {
-    background-color: #555;
+    background-color: #f3b2d4;
 }
