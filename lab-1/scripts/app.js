@@ -57,11 +57,31 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Inject texts into About Us page
+document.addEventListener("DOMContentLoaded", function() {
+    let aboutMe = "About Me";
+    document.getElementById("aboutMe").innerHTML = aboutMe;
 
+    let aboutMeDesc = "Hi, My name is Malsini Masachchige and I'm an international student. My home country is SriLanka and I'm 21 years old!. I'm a 2nd year student in the Computer Programming and Analysis program and so far its been quite an experience. I will say though, its been great, I've met so many wonderful people and learned a lot of new things. Fun fact about me is that I'm scared of fire :D I've never lit a match by myself haha (a bit embarassing at my grown age).";
+    document.getElementById("aboutMeDesc").innerHTML = aboutMeDesc;
+
+    let halloween = "My love for Halloween";
+    document.getElementById("halloween").innerHTML = halloween;
+
+    let halloweenDesc ="I absolutely love halloween, its so much fun. I love dressing up and decorating the house, staying up late and watching horror movies with snacks is one thing me and my cousins always do. Oh and giving out candy to kids who show up trick or treating makes me feel like I'm a really nice person.";
+    document.getElementById("halloweenDesc").innerHTML = halloweenDesc;
+
+    let cats = "My love for Cats";
+    document.getElementById("cats").innerHTML = cats;
+
+    let catsDesc ="Cats are gods gift to mankind. They are so adorable and majestic, I miss my cat back home (her name is kitty and she's the best). They are independent, Can lower your stress levels, give you cute attacks 99% of the time and also they are great companions. Cats are so underrated I don't know why.";
+    document.getElementById("catsDesc").innerHTML = catsDesc;
+
+});
 
 // Change the Product link text to Interests, add DOMContentLoaded eventLister to ensure that no null values are being used 
 document.addEventListener("DOMContentLoaded", function() {
-    // Find the =element with the text "Products"
+    // Find the element with the text "Products"
     let productsLink = document.querySelector('.navbar-nav .nav-item:nth-child(2) .nav-link');
 
     // Change the text content of the link to "Interests"
