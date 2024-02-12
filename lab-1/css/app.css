@@ -13,6 +13,13 @@ body {
     padding: 0;
 }
 
+.h2{
+    font-size: 23px;
+    font-style:oblique;
+    font-family: 'Monaco', monospace;
+    color: #363434;
+}
+
 .container {
     font-family: 'Monaco', monospace;
     font-size: 20px;
@@ -23,7 +30,7 @@ body {
 
 
 
-.pcontainer {
+.p-container {
     
     color: #555;
     background: linear-gradient(to right, #FFE4E1, #FFC0CB); /* Light pink to pink gradient */
