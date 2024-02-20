@@ -64,7 +64,7 @@
     let imagePlaceholderContainer = document.createElement("div");
     imagePlaceholderContainer.className = "container";
     let imagePlaceholder = document.createElement("img");
-    imagePlaceholder.setAttribute("data-src", "holder.js");
+    imagePlaceholder.setAttribute("data-src", "holder.js/200x200");
     imagePlaceholder.setAttribute("alt", "Image Placeholder");
     imagePlaceholderContainer.appendChild(imagePlaceholder);
     document.body.appendChild(imagePlaceholderContainer);
