@@ -271,3 +271,7 @@ body {
 .register-form .form-group .register-link a:hover {
     text-decoration: underline;
 }
+/* Error messages div format */
+.error-message {
+    color: #555;
+}

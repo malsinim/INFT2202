@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // if there is an error, and hides it again after the error clears
 document.addEventListener("DOMContentLoaded", function()  {
     // Create ErrorMessage div and hide it initially
-    let errorMessageDiv = $("<div>").attr("id", "ErrorMessage").hide();
+    let errorMessageDiv = $("<div>").attr("id", "ErrorMessage").addClass("error-message").hide();
     $(".register-container").prepend(errorMessageDiv);
 
     // Function to display error message
@@ -225,6 +225,7 @@ document.addEventListener("DOMContentLoaded", function()  {
 
     // Function to validate form
     function validateForm() {
+        // Get the form inputs 
         let firstName = $("#firstName").val();
         let lastName = $("#lastName").val();
         let email = $("#email").val();
