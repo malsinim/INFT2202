@@ -179,3 +179,32 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 3000);
     });
 });
+
+// Lab 2 JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+    $("#Login").click(function (e){
+        // Prevent form submission
+        e.preventDefault(); 
+        
+        // Get username 
+        let username = $("#username").val();
+        
+        if(username) {
+            // Remove any existing username text
+            $(".navbar-nav .navbar-text").remove();
+            
+            // Create new list item for username
+            let usernameNavItem = $("<li>").addClass("nav-item navbar-text").text("Hi, " + username);
+            usernameNavItem.addClass("nav-link");
+            // Find contact us link and add the nav item after contactUs link
+            let contactUsLink = $(".navbar-nav .nav-item:nth-child(6)");
+            if (contactUsLink.length > 0) {
+                contactUsLink.after(usernameNavItem);
+            }
+        }
+    });
+});
+
+
+
+

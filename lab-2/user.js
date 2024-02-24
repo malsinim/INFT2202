@@ -21,14 +21,4 @@ export class User {
         this.password = password;
     }
 
-    /**
-     * @property {function} displayUser 
-     * @returns {string}
-     */
-    displayUser() {
-         return `Name: ${this.firstName}${this.lastName}
-         Username: ${this.username}
-         Email: ${this.email}
-         Password: ${this.password}`
-    }
 }
