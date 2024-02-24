@@ -9,14 +9,12 @@ export class User {
      * User
      * @param {string} firstName
      * @param {string} lastName
-     * @param {string} username
      * @param {string} email
      * @param {string} password
      */
-    constructor(firstName, lastName, username, email, password) {
+    constructor(firstName, lastName, email, password) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.username = username;
         this.email = email;
         this.password = password;
     }

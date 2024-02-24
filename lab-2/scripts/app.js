@@ -1,8 +1,8 @@
 // Name: Malsini Masachchige
 // FileName: app.js
-// Date: 2021-02-11
+// Date: 2024-02-24
 // Desc: app.js is the javaScript file that is used to change/add/remove elements witin the DOM
-
+import { User } from './user.js' ; 
 // Inject text into Home page, add DOMContentLoaded eventLister to ensure that no null values are being used 
 document.addEventListener("DOMContentLoaded", function() {
     let welcomeMsg = "Hi! welcome to my website :D My name is Malsini and this is a website I created as a course requirement for INFT2202 - Web Development CSS! I had tons of fun creating this website and I hope you will like it! Thank you for visiting my site Feel free to check all the pages Ive included in the nav bar :D";
@@ -181,6 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Lab 2 JavaScript
+// Function to add the user name in between contact us and login link 
 document.addEventListener("DOMContentLoaded", function() {
     $("#Login").click(function (e){
         // Prevent form submission
@@ -205,6 +206,97 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Function to add the div with the errorMessages on to register.html , and hides it when a user first enters to the page and displays error messages 
+// if there is an error, and hides it again after the error clears
+document.addEventListener("DOMContentLoaded", function()  {
+    // Create ErrorMessage div and hide it initially
+    let errorMessageDiv = $("<div>").attr("id", "ErrorMessage").hide();
+    $(".register-container").prepend(errorMessageDiv);
 
+    // Function to display error message
+    function displayErrorMessage(message) {
+        $("#ErrorMessage").text(message).show();
+    }
+
+    // Function to hide error message
+    function hideErrorMessage() {
+        $("#ErrorMessage").hide();
+    }
+
+    // Function to validate form
+    function validateForm() {
+        let firstName = $("#firstName").val();
+        let lastName = $("#lastName").val();
+        let email = $("#email").val();
+        let password = $("#password").val();
+        let confirmPassword = $("#confirmPassword").val();
+
+        // Check first name length
+        if (firstName.length < 2) {
+            displayErrorMessage("First Name must be at least 2 characters long.");
+            return false;
+        } else {
+            hideErrorMessage();
+        }
+
+        // Check last name length
+        if (lastName.length < 2) {
+            displayErrorMessage("Last Name must be at least 2 characters long.");
+            return false;
+        } else {
+            hideErrorMessage();
+        }
+
+        // Check if email is valid
+        if (email.length < 8 || !email.includes('@')) {
+            displayErrorMessage("Please enter a valid email address.");
+            return false;
+        } else {
+            hideErrorMessage();
+        }
+
+        // Check password length
+        if (password.length < 6) {
+            displayErrorMessage("Password must be at least 6 characters long.");
+            return false;
+        } else {
+            hideErrorMessage();
+        }
+
+        // Check if passwords match
+        if (password !== confirmPassword) {
+            displayErrorMessage("Passwords do not match.");
+            return false;
+        } else {
+            hideErrorMessage();
+        }
+
+        // If all validation passes, return true
+        return true;
+    }
+
+    // If the registration for is submitted
+    $(".register-form").submit(function(event) {
+        // Prevent default form submission
+        event.preventDefault();
+
+        // Validate the form
+        if (validateForm()) {
+            // If validation passes, create a User and display in console
+            let user = new User(
+                $("#firstName").val(),
+                $("#lastName").val(),
+                $("#email").val(),
+                $("#password").val()
+            );
+            console.log("User:", user);
+
+            // Clear the form
+            $(".register-form")[0].reset();
+        }
+    });
+
+
+});
 
 
