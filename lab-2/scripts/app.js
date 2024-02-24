@@ -1,7 +1,9 @@
 // Name: Malsini Masachchige
+// ID : 100854161
 // FileName: app.js
 // Date: 2024-02-24
 // Desc: app.js is the javaScript file that is used to change/add/remove elements witin the DOM
+
 import { User } from './user.js' ; 
 // Inject text into Home page, add DOMContentLoaded eventLister to ensure that no null values are being used 
 document.addEventListener("DOMContentLoaded", function() {
@@ -180,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-// Lab 2 JavaScript
+// Lab 2 JavaScript (Adds user name in navbar,Creates a Div with error messages, Validates registration form, logs User details onto console)
 // Function to add the user name in between contact us and login link 
 document.addEventListener("DOMContentLoaded", function() {
     $("#Login").click(function (e){
@@ -276,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function()  {
         return true;
     }
 
-    // If the registration for is submitted
+    // If the registration form is submitted
     $(".register-form").submit(function(event) {
         // Prevent default form submission
         event.preventDefault();
