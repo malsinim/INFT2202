@@ -19,12 +19,13 @@ function getAndDisplay(url) {
     });
 }
 // for each url variable above, call the function in a console.log
-getAndDisplay(url_posts);
-getAndDisplay(url_comments);
-getAndDisplay(url_albums);
-getAndDisplay(url_photos);
-getAndDisplay(url_todos);
-getAndDisplay(url_users);
+
+console.log(getAndDisplay(url_posts));
+console.log(getAndDisplay(url_comments));
+console.log(getAndDisplay(url_albums));
+console.log(getAndDisplay(url_photos));
+console.log(getAndDisplay(url_todos));
+console.log(getAndDisplay(url_users));
 
 // from the photos url, put 2 random photos into the img elements in the html
 $(function populateRandomPhotos(){
