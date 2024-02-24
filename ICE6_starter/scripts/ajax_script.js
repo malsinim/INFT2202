@@ -1,3 +1,8 @@
+// Author: Malsini Masachchige
+// File name: ajax_script.js
+// Date Created: 2024-02-24
+// Desc: Ajax Script which demos the use of jquery get function
+
 console.log('ajax_script.js loaded')
 
 let url_posts = 'https://jsonplaceholder.typicode.com/posts';
