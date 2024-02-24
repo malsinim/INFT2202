@@ -50,7 +50,7 @@ body {
     padding: 20px ;
     color:#FFC0CB;
     
-    background: linear-gradient(to right, #FFE4E1, #FFC0CB); /* Light pink to pink gradient */
+    background: linear-gradient(to right, #FFE4E1, #FFC0CB); 
     
     
     border-radius: 15px;
@@ -104,6 +104,7 @@ body {
 .form-group label {
     display: block;
     font-weight: bold;
+    color:#F08080;
 }
 
 .form-group input[type="text"],
@@ -129,4 +130,144 @@ body {
 
 .form-group input[type="submit"]:hover {
     background-color: #f3b2d4;
+}
+
+
+/* Login Form Styles */
+
+.login-container {
+    text-align: center;
+    
+}
+
+.login-form {
+    display: inline-block;
+    text-align: left;
+    width: 300px; 
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.login-form h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form .form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.login-form .form-group input[type="text"],
+.login-form .form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form .form-group input[type="submit"] {
+    width: 100%;
+    background-color:#F08080;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form .form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.login-form .register-link {
+    margin-top: 10px;
+    color:#F08080;
+}
+
+.login-form .register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-form .register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Registration Form Styles */
+
+.register-container {
+    text-align: center;
+}
+
+.register-form {
+    display: inline-block;
+    text-align: left;
+    width: 400px; 
+    margin: 0 auto; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.register-form h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.register-form .form-group {
+    margin-bottom: 15px;
+}
+
+.register-form .form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.register-form .form-group input[type="text"],
+.register-form .form-group input[type="email"],
+.register-form .form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.register-form .form-group input[type="submit"] {
+    width: 100%;
+    background-color:#F08080;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-form .form-group input[type="submit"]:hover {
+    background-color: #075eba;
+}
+
+.register-form .form-group .register-link {
+    margin-top: 10px;
+    
+}
+
+.register-form .form-group .register-link a {
+    color:#F08080;
+    text-decoration: none;
+}
+
+.register-form .form-group .register-link a:hover {
+    text-decoration: underline;
 }
