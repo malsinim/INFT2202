@@ -49,10 +49,7 @@ body {
     height: 60px; 
     padding: 20px ;
     color:#FFC0CB;
-    
     background: linear-gradient(to right, #FFE4E1, #FFC0CB); 
-    
-    
     border-radius: 15px;
     
 }
@@ -280,8 +277,8 @@ body {
 .blog-card {
     margin-bottom: 20px;
     border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f5e1df;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .blog-card img {
@@ -302,3 +299,4 @@ body {
     margin-right: auto;
     width: 70%;
 }
+
