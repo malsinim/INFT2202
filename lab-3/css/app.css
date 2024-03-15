@@ -1,0 +1,304 @@
+/* General Styles */
+body {
+    
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Fixed background image */
+    font-family: 'Monaco', monospace;
+    font-size: 17px;
+    color: #FFC0CB;
+    background-color: #d4ebff;
+    
+    margin: 0;
+    padding: 0;
+}
+
+.h2{
+    font-size: 23px;
+    font-style:bold;
+    font-family: 'Monaco', monospace;
+    color:#898285 ;
+    font-weight: bold;
+}
+
+.container {
+    font-family: 'Monaco', monospace;
+    font-size: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+
+.p-container {
+    
+    color: #555;
+    background: linear-gradient(to right, #FFE4E1, #FFC0CB); /* Light pink to pink gradient */
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 20px; /* Add space above the container */
+    padding-bottom: 20px; 
+    border-radius: 15px;
+    
+}
+
+/* Navbar Styles */
+.navbar {
+    height: 60px; 
+    padding: 20px ;
+    color:#FFC0CB;
+    
+    background: linear-gradient(to right, #FFE4E1, #FFC0CB); 
+    
+    
+    border-radius: 15px;
+    
+}
+
+.navbar-brand {
+    font-weight: light;
+}
+
+.navbar-nav .nav-link {
+    color: #F08080;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFB6C1;
+}
+
+.navbar-nav .nav-item:nth-child(1) .nav-link {
+
+    color: #F08080;
+}
+
+/* Footer Navbar Styles */
+.footer-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+.navbar-brand .website-name {
+    color: #fa7878; 
+}
+
+.navbar-brand.mb-0.h1 {
+    color: #F08080; 
+}
+
+
+/* Contact Form Styles */
+
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color:#F08080;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width:45%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.form-group input[type="submit"] {
+    background-color: #f5d8eb;
+    color: #f5d8eb;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #f3b2d4;
+}
+
+
+/* Login Form Styles */
+
+.login-container {
+    text-align: center;
+    
+}
+
+.login-form {
+    display: inline-block;
+    text-align: left;
+    width: 300px; 
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.login-form h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form .form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.login-form .form-group input[type="text"],
+.login-form .form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.login-form .form-group input[type="submit"] {
+    width: 100%;
+    background-color:#F08080;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-form .form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.login-form .register-link {
+    margin-top: 10px;
+    color:#F08080;
+}
+
+.login-form .register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-form .register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Registration Form Styles */
+
+.register-container {
+    text-align: center;
+}
+
+.register-form {
+    display: inline-block;
+    text-align: left;
+    width: 400px; 
+    margin: 0 auto; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.register-form h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.register-form .form-group {
+    margin-bottom: 15px;
+}
+
+.register-form .form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.register-form .form-group input[type="text"],
+.register-form .form-group input[type="email"],
+.register-form .form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.register-form .form-group input[type="submit"] {
+    width: 100%;
+    background-color:#F08080;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-form .form-group input[type="submit"]:hover {
+    background-color: #075eba;
+}
+
+.register-form .form-group .register-link {
+    margin-top: 10px;
+    
+}
+
+.register-form .form-group .register-link a {
+    color:#F08080;
+    text-decoration: none;
+}
+
+.register-form .form-group .register-link a:hover {
+    text-decoration: underline;
+}
+/* Error messages div format */
+.error-message {
+    color: #555;
+}
+
+/* Blog Page Styles */
+.blog-card {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.blog-card .card-body {
+    padding: 20px;
+}
+
+
+.card-img-top {
+    padding: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
