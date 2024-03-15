@@ -25,9 +25,10 @@ function renderBlogPosts(posts, images) {
         let card = document.createElement('div');
         card.classList.add('card', 'mb-3');
         card.innerHTML = `
-            <img class="card-img-top" src="${images[index % images.length].webformatURL}" alt="Card images">
+            
             <div class="card-body">
                 <h5 class="card-title">This is a title</h5>
+                <img class="card-img-top" src="${images[index % images.length].webformatURL}" alt="Card images">
                 <p class="card-text">${post.body}</p>
             </div>
         `;
