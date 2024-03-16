@@ -8,7 +8,8 @@
 function fetchBlogPosts() {
     return fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
-        .then(posts => posts.slice(0, 20)); // Ensure at least 20 posts
+        // Get the first 20 posts 
+        .then(posts => posts.slice(0, 20)); 
 }
 
 // Function to fetch images from Pixabay API
@@ -18,27 +19,28 @@ function fetchImagesForPosts() {
         .then(data => data.hits);
 }
 
-// Function to render blog posts with images
+
+// Function to render blog posts with images 
+// Referenced previous ICE's
 function renderBlogPosts(posts, images) {
     const blogPostsContainer = document.getElementById('blog-posts');
     posts.forEach((post, index) => {
         let card = document.createElement('div');
         card.classList.add('card', 'mb-3');
         card.innerHTML = `
-            
-            <div class="card-body">
-                <h5 class="card-title">This is a title</h5>
-                <img class="card-img-top" src="${images[index % images.length].webformatURL}" alt="Card images">
-                <p class="card-text">${post.body}</p>
+            <div class="card-header">
+                <h2>Card Title</h2>
+                <img src="${images[index % images.length].webformatURL}" alt="Card image">
+                <span class="tag tag-teal">Tag</span>
+                <p>${post.body}</p>
+                
             </div>
         `;
-        card.querySelector('.card-title').style.color = '#F08080';
-        card.querySelector('.card-text').style.color = '#555'; 
-        card.querySelector('.card-title').style.textAlign = 'center'; 
-        card.querySelector('.card-title').style.fontWeight = 'bold'; 
         blogPostsContainer.appendChild(card);
     });
 }
+
+
 
 // Fetch blog posts and images on page load
 window.addEventListener('DOMContentLoaded', async () => {
