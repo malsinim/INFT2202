@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // put your code here
 document.addEventListener("DOMContentLoaded", function () {
     getAnimals();
-    renderAnimalTable(arrayOfAnimals);
+    renderAnimalTable();
   });  
 
 
