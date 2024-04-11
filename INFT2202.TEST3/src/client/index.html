@@ -3,9 +3,16 @@
 
 <head>
   <title>Malsini Masachchige - Test 3</title>
-  <link href="../client/css/app.css" rel="stylesheet">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-   
+  
+  <script
+			src="https://code.jquery.com/jquery-3.6.3.min.js"
+			integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+			crossorigin="anonymous"
+		></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    
+  <link rel="stylesheet" href="../client/css/app.css">
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -59,10 +66,27 @@
       </ul>
     </div>
     <div id="create-container" class="container">
-      <!-- put your create form here -->
-      <!-- put your create message area here -->
-    </form>
-    </div>
+      <form id="animal-form">
+          <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="mb-3">
+              <label for="heads" class="form-label">Heads</label>
+              <input type="number" class="form-control" id="heads" name="heads" required>
+          </div>
+          <div class="mb-3">
+              <label for="legs" class="form-label">Legs</label>
+              <input type="number" class="form-control" id="legs" name="legs" required>
+          </div>
+          <div class="mb-3">
+              <label for="sound" class="form-label">Sound</label>
+              <input type="text" class="form-control" id="sound" name="sound" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <div id="form-message"></div>
+  </div>
     <div class="container">
       <hr>
       <p class="lead">Section 2</p>
@@ -77,9 +101,20 @@
       </ul>
     </div>
     <div id="retrieve-container" class="container">
-      <!-- put your retrieve table here -->
-      <!-- put yoru retrieve message area here -->
-    </div>
+      <div id="table-message"></div>
+      <table id="animal-table" class="table">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Heads</th>
+                  <th>Legs</th>
+                  <th>Sound</th>
+              </tr>
+          </thead>
+          <tbody id="animal-table-body"></tbody>
+      </table>
+  </div>
+  
   </main>
 
   <footer class="footer mt-auto py-3 bg-body-tertiary">

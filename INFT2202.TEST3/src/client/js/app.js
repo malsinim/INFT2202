@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // put your code here
 document.addEventListener("DOMContentLoaded", function () {
     getAnimals();
-    renderAnimalTable();
+    renderAnimalTable(arrayOfAnimals);
   });  
 
 
@@ -28,56 +28,31 @@ document.addEventListener("DOMContentLoaded", function () {
  * @return void
  */
 function renderAnimalTable(arrayOfAnimals) {
-    const container = document.getElementById('retrieve-container');
-    container.innerHTML = '';
-  
-    if (arrayOfAnimals.length === 0) {
-      displayMessage('There are currently no animals in the database.', 'retrieve-container');
+  const container = document.getElementById('retrieve-container');
+  const tableMessage = document.getElementById('table-message');
+  const tableBody = document.getElementById('animal-table-body');
+
+  // Clear previous content
+  tableBody.innerHTML = '';
+
+  if (arrayOfAnimals.length === 0) {
+      tableMessage.innerHTML = 'There are currently no animals in the database.';
       return;
-    }
-  
-    const table = document.createElement('table');
-    table.className = 'table';
-  
-    const thead = document.createElement('thead');
-    const tbody = document.createElement('tbody');
-  
-    const headerRow = document.createElement('tr');
-    const nameHeader = document.createElement('th');
-    nameHeader.textContent = 'Name';
-    const typeHeader = document.createElement('th');
-    typeHeader.textContent = 'Type';
-  
-    headerRow.appendChild(nameHeader);
-    headerRow.appendChild(typeHeader);
-  
-    thead.appendChild(headerRow);
-  
-    arrayOfAnimals.forEach(animal => {
-      const row = document.createElement('tr');
-      const nameCell = document.createElement('td');
-      nameCell.textContent = animal.name;
-      const typeCell = document.createElement('td');
-      typeCell.textContent = animal.type;
-  
-      row.appendChild(nameCell);
-      row.appendChild(typeCell);
-  
-      tbody.appendChild(row);
-    });
-  
-    table.appendChild(thead);
-    table.appendChild(tbody);
-  
-    container.appendChild(table);
   }
-  
 
-   
+  tableMessage.innerHTML = ''; 
 
-
-
-
+  arrayOfAnimals.forEach(animal => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+          <td>${animal.name}</td>
+          <td>${animal.heads}</td>
+          <td>${animal.legs}</td>
+          <td>${animal.sound}</td>
+      `;
+      tableBody.appendChild(row);
+  });
+};
 
 /* 
  * submitAnimalForm
@@ -91,7 +66,31 @@ function renderAnimalTable(arrayOfAnimals) {
 async function submitAnimalForm (event) {
     // put your code here
     event.preventDefault(); 
-    await getAnimals();
+    // retrieve form data
+    const form = event.target;
+    const formData = new FormData(form);
+    const animalData = {
+        name: formData.get('name'),
+        heads: parseInt(formData.get('heads')),
+        legs: parseInt(formData.get('legs')),
+        sound: formData.get('sound')
+    };
+
+    try {
+        // validate input data
+        if (!animalData.name || !animalData.heads || !animalData.legs || !animalData.sound) {
+            throw new Error('All fields are required');
+        }
+
+        // Make a fetch call to add the animal
+        const response = await postAnimal(animalData);
+
+        // If successful, refresh the table
+        getAnimals();
+    } catch (error) {
+        // Display error message
+        displayMessage(`Error: ${error.message}`, 'create-container');
+    }
 }
 
 /* 
@@ -103,8 +102,25 @@ async function submitAnimalForm (event) {
  * @param event;
  * @return Animal | Error
  */
-async function postAnimal (event) {
+async function postAnimal (animalData) {
     // put your code here
+    try {
+      const response = await fetch('/api/animal', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(animalData)
+      });
+
+      if (!response.ok) {
+          throw new Error('Failed to add the animal');
+      }
+
+      return response.json();
+  } catch (error) {
+      throw new Error(`Error: ${error.message}`);
+  }
 }
 
 /* 
@@ -116,26 +132,27 @@ async function postAnimal (event) {
  * @param event | null;
  * @return Animal[] | Error
  */
-async function getAnimals (event) {
-    try {
-        const response = await fetch('/api/animal', {
+async function getAnimals() {
+  try {
+      const response = await fetch('/api/animal', {
           method: 'GET'
-        });
-    
-        if (!response.ok) {
+      });
+
+      if (!response.ok) {
           throw new Error('Could not fetch animals');
-        }
-    
-        const animals = await response.json();
-    
-        if (animals.length === 0) {
-          displayMessage('There are currently no animals in the database.', 'retrieve-container');
-        } else {
-          renderAnimalTable(animals);
-        }
-      } catch (error) {
-        displayMessage(`Error: ${error.message}`, 'retrieve-container');
       }
+
+      const animals = await response.json();
+
+      if (animals.length === 0) {
+          displayMessage('There are currently no animals in the database.', 'retrieve-container');
+      } else {
+          renderAnimalTable(animals);
+      }
+  } catch (error) {
+      displayMessage(`Error: ${error.message}`, 'retrieve-container');
+  }
 }
+
 
 
