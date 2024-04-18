@@ -1,0 +1,32 @@
+{{!-- Create the form --}}
+<form action="/animals/add" method="POST">
+  <label for="zoo">Zoo:</label>
+  <input type="text" id="zoo" name="zoo" required><br>
+
+  <label for="scientificName">Scientific Name:</label>
+  <input type="text" id="scientificName" name="scientificName" required><br>
+
+  <label for="commonName">Common Name:</label>
+  <input type="text" id="commonName" name="commonName" required><br>
+
+  <label for="givenName">Given Name:</label>
+  <input type="text" id="givenName" name="givenName" required><br>
+
+  <label for="gender">Gender:</label>
+  <select id="gender" name="gender" required>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select><br>
+
+  <label for="dateOfBirth">Date of Birth:</label>
+  <input type="date" id="dateOfBirth" name="dateOfBirth" required><br>
+
+  <label for="age">Age:</label>
+  <input type="number" id="age" name="age" required><br>
+
+  <label for="isTransportable">Transportable:</label>
+  <input type="checkbox" id="isTransportable" name="isTransportable" value="true"><br>
+
+  <button type="submit">Add Animal</button>
+</form>
